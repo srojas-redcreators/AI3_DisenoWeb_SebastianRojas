@@ -4,47 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Estudiante</title>
+    <link rel="stylesheet" href="css/estudiantes.css">
 </head>
 <body>
 
-    <h1>Sistema de Registro de Estudiantes</h1>
+    <header>
+        <h1>Sistema de Registro de Estudiantes</h1>
+    </header>
 
-    <h2>Registrar nuevo estudiante</h2>
+    <main>
+        <div class="formulario-contenedor">
 
-    <form action="procesar.php" method="post">
+            <h2>Registrar nuevo estudiante</h2>
 
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre"
-               required maxlength="80">
-        <br><br>
+            <form action="procesar.php" method="post">
 
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido"
-               required maxlength="80">
-        <br><br>
+                <div class="grupo-formulario">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre"
+                           required maxlength="80">
+                </div>
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" id="correo" name="correo"
-               required maxlength="120">
-        <br><br>
+                <div class="grupo-formulario">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido"
+                           required maxlength="80">
+                </div>
 
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono"
-               maxlength="20">
-        <br><br>
+                <div class="grupo-formulario">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo"
+                           required maxlength="120">
+                </div>
 
-        <label for="carrera">Carrera:</label>
-        <input type="text" id="carrera" name="carrera"
-               required maxlength="100">
-        <br><br>
+                <div class="grupo-formulario">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono"
+                           maxlength="20">
+                </div>
 
-        <button type="submit">Registrar estudiante</button>
+                <div class="grupo-formulario">
+                    <label for="carrera">Carrera:</label>
+                    <input type="text" id="carrera" name="carrera"
+                           required maxlength="100">
+                </div>
 
-    </form>
+                <button type="submit" class="boton-enviar">
+                    Registrar estudiante
+                </button>
 
-    <br>
+            </form>
 
-    <a href="index.php">Ver estudiantes registrados</a>
+            <a href="index.php" class="enlace-volver">
+                Ver estudiantes registrados
+            </a>
+
+        </div>
+    </main>
 
 </body>
 </html>

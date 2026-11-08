@@ -19,54 +19,65 @@ try {
 
 ?>
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Estudiantes</title>
+    <link rel="stylesheet" href="css/estudiantes.css">
 </head>
 <body>
 
-    <h1>Sistema de Registro de Estudiantes</h1>
+    <header>
+        <h1>Sistema de Registro de Estudiantes</h1>
+    </header>
 
-    <h2>Estudiantes registrados</h2>
+    <main>
+        <h2>Estudiantes registrados</h2>
 
-    <?php if (empty($estudiantes)): ?>
+        <a href="ingreso.php" class="boton">+ Registrar estudiante</a>
 
-        <p>No hay estudiantes registrados.</p>
+        <?php if (empty($estudiantes)): ?>
 
-    <?php else: ?>
+            <p class="mensaje">No hay estudiantes registrados.</p>
 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Correo</th>
-                    <th>Teléfono</th>
-                    <th>Carrera</th>
-                    <th>Fecha de creación</th>
-                </tr>
-            </thead>
+        <?php else: ?>
 
-            <tbody>
-                <?php foreach ($estudiantes as $estudiante): ?>
-                    <tr>
-                        <td><?= htmlspecialchars((string) $estudiante['id'], ENT_QUOTES, 'UTF-8') ?></td>
-                        <td><?= htmlspecialchars($estudiante['nombre'], ENT_QUOTES, 'UTF-8') ?></td>
-                        <td><?= htmlspecialchars($estudiante['apellido'], ENT_QUOTES, 'UTF-8') ?></td>
-                        <td><?= htmlspecialchars($estudiante['correo'], ENT_QUOTES, 'UTF-8') ?></td>
-                        <td><?= htmlspecialchars($estudiante['telefono'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
-                        <td><?= htmlspecialchars($estudiante['carrera'], ENT_QUOTES, 'UTF-8') ?></td>
-                        <td><?= htmlspecialchars($estudiante['fecha_creacion'], ENT_QUOTES, 'UTF-8') ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Carrera</th>
+                            <th>Fecha de creación</th>
+                        </tr>
+                    </thead>
 
-    <?php endif; ?>
+                    <tbody>
+                        <?php foreach ($estudiantes as $estudiante): ?>
+                            <tr>
+                                <td><?= htmlspecialchars((string) $estudiante['id'], ENT_QUOTES, 'UTF-8') ?></td>
+                                <td><?= htmlspecialchars($estudiante['nombre'], ENT_QUOTES, 'UTF-8') ?></td>
+                                <td><?= htmlspecialchars($estudiante['apellido'], ENT_QUOTES, 'UTF-8') ?></td>
+                                <td><?= htmlspecialchars($estudiante['correo'], ENT_QUOTES, 'UTF-8') ?></td>
+                                <td><?= htmlspecialchars($estudiante['telefono'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
+                                <td><?= htmlspecialchars($estudiante['carrera'], ENT_QUOTES, 'UTF-8') ?></td>
+                                <td><?= htmlspecialchars($estudiante['fecha_creacion'], ENT_QUOTES, 'UTF-8') ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+
+        <?php endif; ?>
+    </main>
 
 </body>
 </html>
+
