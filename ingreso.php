@@ -34,7 +34,7 @@
                 <div class="grupo-formulario">
                     <label for="correo">Correo electrónico:</label>
                     <input type="email" id="correo" name="correo"
-                           required maxlength="120">
+                            required maxlength="120">
                 </div>
 
                 <div class="grupo-formulario">
