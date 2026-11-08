@@ -1,0 +1,17 @@
+# Configuración local de la base de datos
+/config/database.php
+
+# Archivos de registro
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuración local del editor
+.vscode/
+.idea/
