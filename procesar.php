@@ -61,6 +61,16 @@ if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
     exit('El correo electrónico no es válido.');
 }
 
+
+// Validar que nombre y apellido contengan letras
+if (
+    !preg_match('/\p{L}/u', $nombre) ||
+    !preg_match('/\p{L}/u', $apellido)
+) {
+    exit('El nombre y el apellido deben contener letras.');
+}
+
+
 // El teléfono es opcional
 if ($telefono === '') {
     $telefono = null;
